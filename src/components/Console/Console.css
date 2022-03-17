@@ -1,0 +1,24 @@
+.Console{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+
+    border: 2px solid white;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0px 10px;
+
+    
+  
+}
+
+.Console input {
+    background-color: transparent;
+    height: 100%;
+    border: 0px solid transparent;
+    outline-width: 0;
+    padding: 0px 10px;
+    color: white;
+    
+}

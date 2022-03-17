@@ -1,0 +1,12 @@
+.Terminal{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 70vh;
+    /* border: 1px solid red; */
+    /* align-items: stretch; */
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 20px;
+
+}
