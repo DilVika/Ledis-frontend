@@ -8,7 +8,9 @@ const repository =  (function () {
         clear: (key) => delete data[key],
 
         save: () => localStorage.setItem(snapshotKey, JSON.stringify(data)),
-        load: () => data = JSON.parse(localStorage.getItem(snapshotKey))
+        load: () => data = JSON.parse(localStorage.getItem(snapshotKey)),
+
+        keys: () => Object.keys(data),
     }
 })();
 
