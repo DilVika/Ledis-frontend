@@ -19,7 +19,7 @@ const lrangeCommandUseCase = (key, [start, stop]) => {
     }
 
     if (Array.isArray(value) && typeof value !== "string") {
-        const list = value.slice(start, stop);
+        const list = value.slice(start, stop + 1);
         return {
             errorMessage: null,
             data: list.join(" "),

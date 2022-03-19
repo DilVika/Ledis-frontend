@@ -4,7 +4,7 @@ import * as constants from "../../utils/constants";
 
 //  Set intersection among all set stored in specified keys. Return array of members of the result set
 const sinterCommandUseCase = (firstKey, ...other) => {   
-    const keys = [firstKey, ...other];
+    const keys = [firstKey.concat(...other)];
     let sets = [];
 
     keys.forEach(key => {

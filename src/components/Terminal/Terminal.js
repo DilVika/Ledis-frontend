@@ -41,7 +41,7 @@ function Terminal() {
                 {display.map((item, index) => (
                     <div key={index}>
                         <p id='input'>{constants.inputSign} {item.input}</p>
-                        <p id='output' className={item.hasError ? "error" : " "}>{item.output}</p>
+                        <p id='output' className={item.hasError ? "error" : "default"}>{(item.output === '') ? "(empty)" : item.output}</p>
                     </div>
                 ))}
                 <div ref={itemEndRef} />

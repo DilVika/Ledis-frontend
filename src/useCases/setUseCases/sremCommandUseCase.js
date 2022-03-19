@@ -12,6 +12,11 @@ const sremCommandUseCase = (key, list) => {
         value = [];
     }
 
+    if (!Array.isArray(list)) {
+        list = [list];
+    }
+
+
     if (Array.isArray(value) && typeof value !== "string" && value.length === converter.convertListToSet(value).size) {
         value = converter.convertListToSet(value);
 
@@ -29,7 +34,7 @@ const sremCommandUseCase = (key, list) => {
         repository.put(key, value);
         return {
             errorMessage: null,
-            data: value.length,
+            data: count,
         };
     } else {
         return {

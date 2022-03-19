@@ -16,8 +16,9 @@
     
 }
 
-.Display p #output{
-    color: rgb(64 139 39);
+
+.default {
+    color: rgb(64 139 39);;
 }
 
 .error{
