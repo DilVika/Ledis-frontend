@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ledis",
+  "name": "LEDIS - a simple light-weight Redi ",
   "icons": [
     {
       "src": "favicon.ico",
