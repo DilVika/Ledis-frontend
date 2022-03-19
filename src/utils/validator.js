@@ -6,3 +6,5 @@ const  isKeyNotFound = (queryResult) => {
     
     return false;
 }
+
+export default isKeyNotFound;

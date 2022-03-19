@@ -1,4 +1,6 @@
-import converter from "../../utils/converter";
+import repository from "../../repositories/repository";
+import { isKeyNotFound, converter } from "../../utils";
+import * as constants from "../../utils/constants";
 
 const saddCommandUseCase = (key, list) => {
     let value = repository.get(key);
@@ -9,7 +11,7 @@ const saddCommandUseCase = (key, list) => {
     }
 
 
-    if (Array.isArray(value) &&  value.length  === converter.convertListToSet(value).size) {
+    if (Array.isArray(value) && typeof value !== "string" &&  value.length  === converter.convertListToSet(value).size) {
         value = converter.convertListToSet(value);
 
         // Add list to set.
@@ -24,7 +26,7 @@ const saddCommandUseCase = (key, list) => {
         };
     } else {
         return {
-            errorMessage: ERROR_NOT_A_SET,
+            errorMessage: constants.ERROR_NOT_A_SET,
             data: null
         };
     }

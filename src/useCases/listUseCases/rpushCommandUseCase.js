@@ -1,3 +1,8 @@
+import repository from "../../repositories/repository";
+
+import * as constants from "../../utils/constants";
+import isKeyNotFound from "../../utils/validator";
+
 /**
  * Get value of key using @function repository.get() with the key and check if value is an array of string.
  * If the value is an array of string then append @param {Array} of string to list and call @function repository.put() with the key and list.
@@ -14,7 +19,7 @@ const rpushCommandUseCase = (key, list) => {
     }
     
 
-    if (Array.isArray(value)) {
+    if (Array.isArray(value) && typeof value !== "string") {
         value.push(...list);
         repository.put(key, value);
         return {
@@ -23,7 +28,7 @@ const rpushCommandUseCase = (key, list) => {
         };
     } else {
         return {
-            errorMessage: ERROR_NOT_A_LIST,
+            errorMessage: constants.ERROR_NOT_A_LIST,
             data: null
         };
     }

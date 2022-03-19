@@ -3,12 +3,14 @@
  * If there is no error then @return {string} the success message @string OK.
  * If there is error then @return {const string} the error message. @string error.message.
  */
+import repository from "../../repositories/repository";
+import * as constants from "../../utils/constants";
 const saveCommandUseCase = () => {
     try {
         repository.save();
         return {
             errorMessage: null,
-            data: OK
+            data: constants.OK
         }
     } catch (error) {
         return {

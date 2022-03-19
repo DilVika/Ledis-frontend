@@ -1,3 +1,8 @@
+import repository from "../../repositories/repository";
+
+import * as constants from "../../utils/constants";
+import isKeyNotFound from "../../utils/validator";
+
 /**
  * Get value of key using @function repository.get() with the key and check if value is an array of string.
  * If the value is an array of string then remove and return first item of list by remove first item of array and apply chang with @function repository.put() with the key and new list.
@@ -10,12 +15,12 @@ const lpopCommandUseCase = key => {
 
     if (isKeyNotFound(value)) {
         return {
-            errorMessage: ERROR_KEY_NOTFOUND,
+            errorMessage: constants.ERROR_KEY_NOTFOUND,
             data: null
         };
     }
 
-    if (Array.isArray(value)) {
+    if (Array.isArray(value) && typeof value !== "string") {
         const list = value.slice(1);
         repository.put(key, list);
         return {
@@ -24,7 +29,7 @@ const lpopCommandUseCase = key => {
         };
     } else {
         return {
-            errorMessage: ERROR_NOT_A_LIST,
+            errorMessage: constants.ERROR_NOT_A_LIST,
             data: null
         };
     }

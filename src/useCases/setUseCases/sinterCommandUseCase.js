@@ -1,3 +1,7 @@
+import repository from "../../repositories/repository";
+import { isKeyNotFound, converter } from "../../utils";
+import * as constants from "../../utils/constants";
+
 //  Set intersection among all set stored in specified keys. Return array of members of the result set
 const sinterCommandUseCase = (firstKey, ...other) => {   
     const keys = [firstKey, ...other];
@@ -9,7 +13,7 @@ const sinterCommandUseCase = (firstKey, ...other) => {
             // Create a list if not exist.
             value = [];
         }
-        if (Array.isArray(value) && value.length === converter.convertListToSet(value).size) {
+        if (Array.isArray(value) && typeof value !== "string" && value.length === converter.convertListToSet(value).size) {
             value = converter.convertListToSet(value);
             sets.push(value);
         }
@@ -27,7 +31,7 @@ const sinterCommandUseCase = (firstKey, ...other) => {
         };
     } else {
         return {
-            errorMessage: ERROR_NOT_A_SET,
+            errorMessage: constants.ERROR_NOT_A_SET,
             data: null
         };
     }

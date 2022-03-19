@@ -1,3 +1,5 @@
+import repository from "../../repositories/repository";
+
 // Use case that list all available keys.
 const keysCommandUseCase = () => {
     return {

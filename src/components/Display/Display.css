@@ -6,6 +6,20 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-y: scroll;
    
+}
+
+.Display p{
+    text-align: left;
+    margin-left: 20px;
+    
+}
+
+.Display p #output{
+    color: rgb(64 139 39);
+}
+
+.error{
+    color: red;
 }

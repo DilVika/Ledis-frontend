@@ -15,11 +15,13 @@ const convertListToSet = (list) => {
 }
 
 
-const converter =  (function () {
-    return {
-        convertSetToList,
-        convertListToSet,
-    };
-})();
+// const converter =  (function () {
+//     return {
+       
+//     };
+// })();
 
-export default converter;
+export default {
+  convertSetToList,
+  convertListToSet,
+};

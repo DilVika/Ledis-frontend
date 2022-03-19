@@ -1,3 +1,5 @@
+import repository from "../../repositories/repository";
+import isKeyNotFound from "../../utils/validator";
 // A use case that delete a key. 
 // Return length of keys that deleted.
 const delCommandUseCase = (key) => {
@@ -15,3 +17,5 @@ const delCommandUseCase = (key) => {
         };
     }
 }
+
+export default delCommandUseCase;

@@ -1,3 +1,5 @@
+import * as constants from '../utils/constants';
+
 const repository =  (function () {
     let data = {};
 
@@ -7,8 +9,8 @@ const repository =  (function () {
         get: (key) => (key in data) ? data[key] : null,
         clear: (key) => delete data[key],
 
-        save: () => localStorage.setItem(snapshotKey, JSON.stringify(data)),
-        load: () => data = JSON.parse(localStorage.getItem(snapshotKey)),
+        save: () => localStorage.setItem(constants.snapshotKey, JSON.stringify(data)),
+        load: () => data = JSON.parse(localStorage.getItem(constants.snapshotKey)),
 
         keys: () => Object.keys(data),
     }

@@ -1,8 +1,10 @@
 import './Display.css'
 
-function Display () {
+function Display (props) {
     return (
-        <div className="Display"/>
+        <div className="Display">
+            {props.children}
+        </div>
     );
 }
 

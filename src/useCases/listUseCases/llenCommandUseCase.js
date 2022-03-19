@@ -1,3 +1,7 @@
+import repository from "../../repositories/repository";
+
+import * as constants from "../../utils/constants";
+import isKeyNotFound from "../../utils/validator";
 /**
  * Get a value of a key in a map as well as result from calling @function repository.get() with the key.
  * If the value is an array of string then @return {number} the length of the array.
@@ -10,20 +14,20 @@ const llenCommandUseCase = key => {
 
     if (isKeyNotFound(value)) {
         return {
-            errorMessage: ERROR_KEY_NOTFOUND,
+            errorMessage: constants.ERROR_KEY_NOTFOUND,
             data: null
         };
     }
 
 
-    if (Array.isArray(value)) {
+    if (Array.isArray(value) && typeof value !== "string") {
         return {
             errorMessage: null,
             data: value.length,
         }
     } else {
         return {
-            errorMessage: ERROR_NOT_A_LIST,
+            errorMessage: constants.ERROR_NOT_A_LIST,
             data: null
         }
     }
