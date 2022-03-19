@@ -1,5 +1,7 @@
 export const snapshotKey = 'Ledis-snapshot';
 
+export const title = 'Ledis-CLI';
+
 // Commands 
 // String
 export const SET_COMMAND = 'SET';
