@@ -3,10 +3,9 @@
 This project was deployed on firebase: [Ledis](https://ledis-frontend.web.app/).
 
 ## Overview
+This is a simple version of Redis-CLI on the web called Ledis using Reactjs, follow [Redis-CLI](https://try.redis.io/) website and has been deployed on firebase.
 
-This simple project creates a simplified, light-weight version using Reactjs, follow [Redis-CLI](https://try.redis.io/) websites and has been deployed on firebase.
-
-To run, using ### `npm start`
+To run, using `npm start`
 
 ## Design
 
