@@ -4,6 +4,8 @@ import Display from '../Display/Display';
 import Console from '../Console/Console';
 
 function Terminal() {
+    const [display, setDisplay] = useState('');
+    
     return (
         <div className="Terminal">
             <Display/>
