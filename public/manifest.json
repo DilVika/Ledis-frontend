@@ -1,6 +1,6 @@
 {
   "short_name": "Ledis",
-  "name": "LEDIS - a simple light-weight Redi ",
+  "name": "Ledis - a simple light-weight Redis-CLI",
   "icons": [
     {
       "src": "favicon.ico",
